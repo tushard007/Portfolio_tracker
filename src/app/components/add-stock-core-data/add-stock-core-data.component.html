@@ -1,0 +1,45 @@
+<div class="container">
+    <div class="row">
+        <form (ngSubmit)="saveStockList()">
+
+            <div class="form-group">
+                <input type="text" name="company_name" [(ngModel)]="stockCoreData.company_name"
+                    placeholder="Enter company name" class="form-control col-md-12 " />
+            </div>
+
+            <div class="form-group">
+                <input type="text" name="NES_CODE" [(ngModel)]="stockCoreData.nse_code" placeholder="Enter NSE code"
+                    class="form-control col-md-12" />
+            </div>
+
+            <div class="form-group">
+                <input type="text" name="BSE_code" [(ngModel)]="stockCoreData.bse_code" placeholder="Enter BSE code"
+                    class="form-control col-md-12">
+            </div>
+
+            <div class="form-group">
+                <input type="text" name="ISIN" [(ngModel)]="stockCoreData.isin" placeholder="Enter ISIN code"
+                    class="form-control col-md-12">
+            </div>
+
+            <div class="form-group">
+                <input type="text" name="listed_date" [(ngModel)]="stockCoreData.listed_date"
+                    placeholder="Enter listed date" class="form-control col-md-12">
+            </div>
+            <div class="form-group">
+                <input type="text" name="industry" [(ngModel)]="stockCoreData.industry" placeholder="Enter industry"
+                    class="form-control col-md-12">
+            </div>
+            <div class="form-group">
+                <input type="text" name="sector" [(ngModel)]="stockCoreData.sector" placeholder="Enter sector"
+                    class="form-control col-md-12">
+            </div>
+            <div class="form-group">
+                <input type="text" name="face_value" [(ngModel)]="stockCoreData.face_value" placeholder="Enter face value of stock"
+                    class="form-control col-md-12">
+            </div>
+            <button type="submit" class="btn btn-primary">Add Stock</button>
+            <button *ngIf="stockCoreData.id" (click)="deleteStock(stockCoreData.id)" class="btn btn-danger">Delete</button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+<div class="col-md-4">
+    <a class="btn btn-primary text-light" routerLink="/addStockCoreData">Add Stock Data</a>
+</div>
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Company Name</th>
+        <th scope="col">NSE Code</th>
+        <th scope="col">BSE code</th>
+        <th scope="col">ISIN</th>
+        <th scope="col">Industry</th>
+        <th scope="col">Sector</th>
+        <th scope="col">Face Value</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr  *ngFor="let stock of stockCoreData">
+        <th scope="row">{{stock.company_name}}</th>
+        <td> <a routerLink="/editStockCoreData/{{stock.id}}" class="card-body flex">{{stock.nse_code }}</a></td>
+        <td>{{stock.bse_code }}</td>
+        <td>{{stock.isin}}</td>
+        <td> {{stock.industry }}</td>
+        <td> {{stock.sector }}</td>
+        <td> {{stock.face_value }}</td>
+      </tr>
+
+    </tbody>
+  </table>
+
