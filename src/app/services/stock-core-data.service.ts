@@ -7,7 +7,7 @@ import { StockCoreData } from '../models/StockCoreData';
   providedIn: 'root'
 })
 export class StockCoreDataService {
-private getStockCoreDataURL:string="http://localhost:8080/api/StockCoreData";
+private getStockCoreDataURL:string="http://localhost:9191/api/StockCoreData";
   constructor(private _httpClient:HttpClient ) { }
 
 getStockList():Observable<StockCoreData[]>{

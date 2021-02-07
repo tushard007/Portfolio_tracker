@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="row">
+        <form (ngSubmit)="savePortfolioList()">
+            <div class="form-group">
+                Broker:
+                <div> <select class="form-select form-select-sm" aria-label=".form-select-sm example"
+                        [value]="portfolioData.broker" (change)="onChange($event.target.value)">
+                        <option>select broker</option>
+                        <option *ngFor="let bkr of broker">{{bkr}}</option>
+                    </select> selected value: {{portfolioData.broker}} </div>
+                Script:<div> <select class="form-select form-select-sm" aria-label=".form-select-sm example"
+                        (change)="onChange2($event.target.value)">
+                        <option>select script</option>
+                        <option *ngFor="let stock of stockCoreData">{{stock.company_name}}</option>
+                    </select> </div>{{portfolioData.stock_id}}
+                <div class="form-group">
+                Available Quantity: <input type="text" name="Quantity" [(ngModel)]="portfolioData.available_quantity"
+                        placeholder="Enter Stock Quantity name" class="form-control col-md-12 " />
+                </div>
+                <div class="form-group">
+               Transaction Date: <input type="text" name="transaction_date" [(ngModel)]="portfolioData.txn_date"
+                        placeholder="Enter transaction Date" class="form-control col-md-12 " />
+                </div>
+                <div class="form-group">
+                Other CostL <input type="text" name="other_cost" [(ngModel)]="portfolioData.other_cost"
+                        placeholder="Enter other cost" class="form-control col-md-12 " />
+                </div>
+                Stock Id <input type="text" name="id" [(ngModel)]="portfolioData.stock_id"
+                    placeholder="Enter stock id code" class="form-control col-md-12" />
+            </div>
+
+
+
+            <div class="form-group">
+                Current Amount <input type="text" name="current_amount" [(ngModel)]="portfolioData.current_amount"
+                    placeholder="Enter broker name" class="form-control col-md-12 " />
+            </div>
+
+
+            <button type="submit" class="btn btn-primary">Add Stock</button>
+
+        </form>
+    </div>

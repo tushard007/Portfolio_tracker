@@ -1,0 +1,46 @@
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link active" aria-current="page" routerLink="/ListPortfolioData">Portfolio List</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/addPortfolioData">Add Portfolio Data</a>
+  </li>
+</ul>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Stock Id</th>
+      <th scope="col">Stock Name</th>
+      <th scope="col">Transaction Date</th>
+      <th scope="col">other Cost</th>
+      <th scope="col">Available Qauntity</th>
+      <th scope="col">Invested Amount</th>
+      <th scope="col">Current amount</th>
+      <th scope="col">Profit /Loss</th>
+      <th scope="col">Broker</th>
+      <th scope="col">Transaction Type</th>
+      <th scope="col">Category
+      <th scope="col">Average Buy Price</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let Portfolio of portfolioData">
+      <td><a routerLink="/editPortfolioData/{{Portfolio.stock_id}}" class="card-body flex">{{Portfolio.stock_id }}</a> </td>
+      <td>{{Portfolio.Portfolio_stock_name}}</td>
+
+      <td>{{Portfolio.txn_date |date }}</td>
+      <td>{{Portfolio.other_cost | currency:'INR' }}</td>
+      <td>{{Portfolio.available_quantity }}</td>
+      <td>{{Portfolio.current_price  | currency:'INR'}}</td>
+      <td>{{Portfolio.invested_amount | currency:'INR' }}</td>
+      <td>{{Portfolio.current_amount  | currency:'INR'}}</td>
+      <td>{{Portfolio.profit_loss  | currency:'INR'}}</td>
+      <td>{{Portfolio.broker }}</td>
+      <td>{{Portfolio.txn_type }}</td>
+      <td>{{Portfolio.category }}</td>
+      <td>{{Portfolio.avg_buy_price  | currency:'INR'}}</td>
+    </tr>
+
+  </tbody>
+</table>

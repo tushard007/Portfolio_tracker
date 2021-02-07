@@ -38,7 +38,7 @@ export class AddStockCoreDataComponent implements OnInit {
     this._stockCoreDataService.deleteStock(id).subscribe(
       data => {
         console.log('deleted response', data);
-        this._router.navigateByUrl('/StockCoreData');
+        this._router.navigateByUrl('/addPortfolioData');
       }
     )
   }

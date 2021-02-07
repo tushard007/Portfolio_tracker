@@ -8,12 +8,20 @@ import { ListStockCoreDataComponent } from './components/list-stock-core-data/li
 import { Routes,RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { AddPortfolioDataComponent } from './components/add-portfolio-data/add-portfolio-data.component';
+import { ListPortfolioDataComponent } from './components/list-portfolio-data/list-portfolio-data.component';
 
-const routers:Routes=[ 
+
+const routers:Routes=[
+  
+  {path: '', redirectTo: '/', pathMatch: 'full'},
   {path: 'StockCoreData', component: ListStockCoreDataComponent},
 {path: 'addStockCoreData', component: AddStockCoreDataComponent},
 {path: 'editStockCoreData/:id', component: AddStockCoreDataComponent},
-{path: '', redirectTo: '/StockCoreData', pathMatch: 'full'}];
+{path: 'addPortfolioData', component: AddPortfolioDataComponent},
+{path: 'ListPortfolioData', component: ListPortfolioDataComponent},
+{path: 'editPortfolioData/:id', component: AddPortfolioDataComponent}
+];
 
 
 
@@ -22,7 +30,10 @@ const routers:Routes=[
   declarations: [
     AppComponent,
     AddStockCoreDataComponent,
-    ListStockCoreDataComponent
+    ListStockCoreDataComponent,
+    AddPortfolioDataComponent,
+    ListPortfolioDataComponent,
+   
   ],
   imports: [
     BrowserModule,
